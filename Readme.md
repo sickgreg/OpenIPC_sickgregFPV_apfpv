@@ -2,7 +2,7 @@
 
 ## 1. 🔌 Connect VTX via Ethernet
 
-## 2. 🔧 Flash Firmware
+## 2. 🔧 Flash this official firmware (July 14th 2025 - before it went back to wpa_supplicant)
 
 Paste the following into the **VTX command prompt(SSH)**:
 
