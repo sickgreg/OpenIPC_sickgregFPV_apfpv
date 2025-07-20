@@ -4,25 +4,23 @@
 
 ## 2. 🔧 Flash Firmware
 
-Paste the following into the **VTX command prompt(ssh)**:
+Paste the following into the **VTX command prompt(SSH)**:
 
 ```sh
 curl -L -o /tmp/tmpFW.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-viktorJul14.tgz
 sysupgrade --archive=/tmp/tmpFW.tgz -f -n
-echo done
 ```
 
-> ⚠️ Wait for the system to reboot after flashing.  Close the ssh session if still open.
+> ⚠️ Don't forget to press Enter to executefinal line.  VTX will reboot. Close the SSH session and start a new one for the next step
 
 ---
 
 ## 3. 📦 Add Overlay Files
 
-After reboot, paste this into the **VTX command prompt (ssh)**:
+Paste this into the **VTX command prompt (SSH)**:
 
 ```sh
 curl -L https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/overlay.tar | tar -C /overlay -xf -
-echo done
 ```
 
 ---
@@ -33,7 +31,6 @@ Then:
 
 ```sh
 reboot
-echo done
 ```
 
 ---
