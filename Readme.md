@@ -8,6 +8,7 @@ sysupgrade --archive=/tmp/tmpFW.tgz -f -n
 After reboot, add the rest of the files by copy/pasting this to VTX command prompt
 ```
 curl -L https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/overlay.tar | tar -C /overlay -xf -
+reboot
 ```
 
 Connect to A
