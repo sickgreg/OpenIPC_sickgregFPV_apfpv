@@ -1,5 +1,6 @@
 Connect VTX via Ethernet
-Flash this firmware by copy/pasting this to VTX command prompt
+
+Flash firmware by copy/pasting this to VTX command prompt
 ```
 curl -L -o /tmp/tmpFW.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-viktorJul14.tgz
 sysupgrade --archive=/tmp/tmpFW.tgz -f -n
