@@ -9,6 +9,7 @@ Paste the following into the **VTX command prompt(ssh)**:
 ```sh
 curl -L -o /tmp/tmpFW.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-viktorJul14.tgz
 sysupgrade --archive=/tmp/tmpFW.tgz -f -n
+echo done
 ```
 
 > ⚠️ Wait for the system to reboot after flashing.  Close the ssh session if still open.
@@ -21,6 +22,7 @@ After reboot, paste this into the **VTX command prompt (ssh)**:
 
 ```sh
 curl -L https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/overlay.tar | tar -C /overlay -xf -
+echo done
 ```
 
 ---
@@ -31,6 +33,7 @@ Then:
 
 ```sh
 reboot
+echo done
 ```
 
 ---
