@@ -11,7 +11,7 @@ curl -L https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/overlay.t
 reboot
 ```
 
-Connect to A
+Connect to Access Point
 
 You can use `nmtui` on radxa to connect / manage AP
 
