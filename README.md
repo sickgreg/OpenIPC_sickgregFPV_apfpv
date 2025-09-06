@@ -16,3 +16,14 @@ You may reach the VTX either via the wifi connection `192.168.0.1`, or re-plug E
   </a>
 </p>
 
+
+
+- 20MHz channels are single numbers, eg `36`
+
+- 40Mhz channels are two numbers, eg `36_40`
+
+Press Apply to negotiate new channel (EU based wlan) --  Forcing is for AU wlan, which is *unsupported*
+
+- Video mode reports correctly after setting your first mode
+
+- Sometimes webUI can break the connection.  Please restart VTX if this occurs
