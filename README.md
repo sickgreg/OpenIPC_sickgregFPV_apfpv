@@ -10,6 +10,9 @@ You may reach the VTX either via the wifi connection `192.168.0.1`, or re-plug E
 
 5. Visit webUI, aalinkFPV page `http://192.168.0.1` or `http://<VTX LAN ip>`
 
-<a href="https://github.com/user-attachments/assets/dfbd0432-2a15-4393-91a7-de0430bd95b9">
-  <img src="https://github.com/user-attachments/assets/dfbd0432-2a15-4393-91a7-de0430bd95b9" width="250"/>
-</a>
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/dfbd0432-2a15-4393-91a7-de0430bd95b9">
+    <img src="https://github.com/user-attachments/assets/dfbd0432-2a15-4393-91a7-de0430bd95b9" width="500"/>
+  </a>
+</p>
+
