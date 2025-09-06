@@ -1,18 +1,22 @@
-1. Copy .tgz fw file to VTX `/tmp`
-2. Run ```sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg07.tgz -f -n```
-
+1. Copy .tgz fw file to VTX `/tmp` and run `sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg07.tgz -f -n`
 Note: Very old fw can't open .tgz archive.  If it fails, run `sysupgrade -k -r -n` first
 
-3. Unplug Ethernet cable and reboot again
-4. Hotspot/AP *should* come up - default ssid is OpenIPC, 12345678.  Find it with your phone or `nmtui` command on radxa -- you want to connect radxa using your external bl-m8812eu2 adapter, not the radxa internal wifi - though it can work to a degree
+If vtx has Internet connection just paste this:
+```
+curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg07.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-greg07.tgz && \
+sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg07.tgz -f -n
+```
 
-You may reach the VTX either via the wifi connection `192.168.0.1`, or re-plug Ethernet after AP has initialized `<your LAN dhcp assigned ip>`
+2. Unplug Ethernet cable and reboot again
+3. Hotspot/AP *should* come up - default ssid is OpenIPC, 12345678.  Find it with your phone or `nmtui` command on radxa -- you want to connect radxa using your external bl-m8812eu2 adapter, not the radxa internal wifi - though it can work to a degree
 
-5. Visit webUI, aalinkFPV page `http://192.168.0.1` or `http://<VTX LAN ip>`
+You may reach the VTX either via the wifi connection `192.168.0.1`, or re-plug Ethernet after AP has initialized `<VTX-LAN-ip>`
+
+4. Visit webUI, aalinkFPV page `http://192.168.0.1` or `http://<VTX-LAN-ip>`
 
 <p align="center">
   <a href="https://github.com/user-attachments/assets/dfbd0432-2a15-4393-91a7-de0430bd95b9">
-    <img src="https://github.com/user-attachments/assets/dfbd0432-2a15-4393-91a7-de0430bd95b9" width="500"/>
+    <img src="https://github.com/user-attachments/assets/dfbd0432-2a15-4393-91a7-de0430bd95b9" width="400"/>
   </a>
 </p>
 
@@ -22,8 +26,7 @@ You may reach the VTX either via the wifi connection `192.168.0.1`, or re-plug E
 
 - 40Mhz channels are two numbers, eg `36_40`
 
-Press Apply to negotiate new channel (EU based wlan) --  Forcing is for AU wlan, which is *unsupported*
-
+Press Apply to negotiate new channel (EU wlan) --  Forcing is for AU wlan
 - Video mode reports correctly after setting your first mode
 
 - Sometimes webUI can break the connection.  Please restart VTX if this occurs
