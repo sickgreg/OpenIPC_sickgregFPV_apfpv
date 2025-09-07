@@ -5,6 +5,8 @@ sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg07.tgz -f -n
 ```
 
 Or manually copy .tgz to VTX `/tmp` and run `sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg07.tgz -f -n`
+
+
 Note: Very old fw can't open .tgz archive.  If it fails, run `sysupgrade -k -r -n` first
 
 2. Unplug Ethernet cable and reboot again
