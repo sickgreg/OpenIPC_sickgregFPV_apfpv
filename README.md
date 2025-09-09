@@ -1,3 +1,5 @@
+Flash ready-to-fly fw to VTX
+
 1. If VTX has Internet connection, SSH in and paste this:
 ```
 curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg07.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-greg07.tgz && \
@@ -10,9 +12,9 @@ Or manually copy .tgz to VTX `/tmp` and run `sysupgrade --archive=/tmp/openipc.s
 Note: Very old fw can't open .tgz archive.  If it fails, run `sysupgrade -k -r -n` first
 
 2. Unplug Ethernet cable and reboot again
-3. Hotspot/AP *should* come up - default ssid is OpenIPC, 12345678.  Find it with your phone or `nmtui` command on radxa -- you want to connect radxa using your external bl-m8812eu2 adapter, not the radxa internal wifi - though it can work to a degree
+3. Hotspot *should* come up - default ssid is OpenIPC, 12345678.  Find it with your phone or `nmtui` command on radxa -- connect using external (recommend: bl-m8812eu2) adapter, not radxa internal wifi, though it can work to a degree
 
-You may reach the VTX either via the wifi connection `192.168.0.1`, or re-plug Ethernet after AP has initialized `<VTX-LAN-ip>`
+You may reach the VTX over the air at `192.168.0.1`, or re-plug Ethernet after AP has initialized at `<VTX-LAN-ip>`
 
 4. Visit webUI, aalinkFPV page `http://192.168.0.1` over wifi, or `http://<VTX-LAN-ip>` over Ethernet
 
