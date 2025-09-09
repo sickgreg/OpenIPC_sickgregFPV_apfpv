@@ -31,7 +31,7 @@ This is important — don’t skip it.
 
 - Connect using your phone **or** `nmtui` on the Radxa.  
   - Recommended: use an **external adapter** (e.g. `bl-m8812eu2`)  
-  - Radxa internal Wi-Fi can work, but is less stable.
+  - Radxa internal Wi-Fi can work, just not well.
 
 - Once connected:  
   - On **Android**, run **PixelPilot** → video should start.  
