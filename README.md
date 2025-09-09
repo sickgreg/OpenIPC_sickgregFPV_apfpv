@@ -11,8 +11,15 @@ Or manually copy .tgz to VTX `/tmp` and run `sysupgrade --archive=/tmp/openipc.s
 
 Note: Very old fw can't open .tgz archive.  If it fails, run `sysupgrade -k -r -n` first
 
-2. Unplug Ethernet cable and reboot again
-3. Hotspot *should* come up - default ssid is OpenIPC, 12345678.  Find it with your phone or `nmtui` command on radxa -- connect using external (recommend: bl-m8812eu2) adapter, not radxa internal wifi, though it can work to a degree
+2. Unplug Ethernet cable and reboot (again)
+3. Hotspot *should* come up - default ssid is OpenIPC, 12345678.  Find it with your phone or `nmtui` command on radxa -- connect using external (recommend: bl-m8812eu2) adapter, not radxa internal wifi, though it can work to a degree.
+
+Run pixelpilot on Android device and video *should* start
+
+or
+
+Radxa running pixelpilot_rk *should* start displaying video
+
 
 You may reach the VTX over the air at `192.168.0.1`, or re-plug Ethernet after AP has initialized at `<VTX-LAN-ip>`
 
