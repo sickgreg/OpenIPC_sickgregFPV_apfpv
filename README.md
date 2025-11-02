@@ -3,15 +3,15 @@
 ### 1. Flash firmware  
 If your VTX has an Internet connection, SSH in and paste:  
 ```bash
-curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg07.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-greg07.tgz && sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg07.tgz -f -n
+curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg08RC2.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-greg08RC2.tgz && sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg08RC2.tgz -f -n
 ```
 
 Or, manually copy the `.tgz` file to `/tmp` on the VTX and run:  
 ```bash
-sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg07.tgz -f -n
+sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg08RC2.tgz -f -n
 ```
 
->  **Note:** Very old firmware may not open `.tgz` archives.  
+> **Note:** Very old firmware may not open `.tgz` archives.  
 If it fails, run this first:  
 ```bash
 sysupgrade -k -r -n
