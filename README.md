@@ -1,14 +1,24 @@
 # Flash Ready-to-Fly FW to VTX
 
 ### 1. Flash firmware  
-If your VTX has an Internet connection, SSH in and paste:  
+If your VTX has an Internet connection, SSH in and paste the command for your target:  
+
+**SSC338Q (greg09rc2)**  
 ```bash
-curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg08RC2.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-greg08RC2.tgz && sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg08RC2.tgz -f -n
+curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz -f -n
 ```
 
-Or, manually copy the `.tgz` file to `/tmp` on the VTX and run:  
+**SSC30KQ (greg09rc2)**  
 ```bash
-sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg08RC2.tgz -f -n
+curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz -f -n
+```
+
+Or, manually copy the `.tgz` file to `/tmp` on the VTX and run the matching command:  
+```bash
+sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz -f -n
+```
+```bash
+sysupgrade --archive=/tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz -f -n
 ```
 
 > **Note:** Very old firmware may not open `.tgz` archives.  
@@ -57,11 +67,14 @@ This is important — don’t skip it.
 ---
 
 ### Notes  
+- The WebUI now includes **20/40/80 MHz** options and a dedicated channel selection menu.  
 - **20 MHz channels** use a single number (e.g. `36`)  
 - **40 MHz channels** use two numbers (e.g. `36_40`)  
+- **80 MHz channels** use four numbers (e.g. `36_40_44_48`)  
 
 - Press **Apply** to negotiate a new channel (**EU wlan**)  
 - Use **Forcing** for **AU wlan**  
 
 - Video mode reports correctly after setting your first mode  
 - Sometimes the WebUI may break the connection — if so, just **restart the VTX**  
+- **SSC30KQ known issue:** setting video modes may freeze or drop the connection; if that happens, restart the VTX.  
