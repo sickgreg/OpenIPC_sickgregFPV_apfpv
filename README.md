@@ -8,7 +8,8 @@ If your VTX has an Internet connection, SSH in and paste the command for your ta
 curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz -f -n
 ```
 
-**SSC30KQ (greg09rc2)**  
+**SSC30KQ (greg09rc2)**  Known issue -  may lose connection and need to reboot for video mode change
+
 ```bash
 curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz -f -n
 ```
@@ -70,7 +71,7 @@ This is important — don’t skip it.
 - The WebUI now includes **20/40/80 MHz** options and a dedicated channel selection menu.  
 - **20 MHz channels** use a single number (e.g. `36`)  
 - **40 MHz channels** use two numbers (e.g. `36_40`)  
-- **80 MHz channels** use four numbers (e.g. `36_40_44_48`)  
+- **80 MHz channels** use lowest and highest of the 4 spanning channels (e.g. `36_48`)  
 
 - Press **Apply** to negotiate a new channel (**EU wlan**)  
 - Use **Forcing** for **AU wlan**  
