@@ -5,13 +5,13 @@ If your VTX has an Internet connection, SSH in and paste the command for your ta
 
 **SSC338Q (greg09rc2)**  
 ```bash
-curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc338q-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz -f -n
+curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc338q-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz -f -n
 ```
 
 **SSC30KQ (greg09rc2)**  Known issue -  may lose connection and need to reboot for video mode change
 
 ```bash
-curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz https://github.com/sickgreg/OpenIPC_sickgregFPV_apfpv/raw/main/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz -f -n
+curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz -f -n
 ```
 
 Or, manually copy the `.tgz` file to `/tmp` on the VTX and run the matching command:  
