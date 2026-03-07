@@ -1,63 +1,71 @@
 # Flash Ready-to-Fly FW to VTX
 
-### 1. Flash firmware  
-If your VTX has an Internet connection, SSH in and paste the command for your target:  
+### 1. Flash firmware (4 variants)
+Pick the command that matches your SoC and WLAN driver set. Each command is a single line and uses a legacy-safe extraction method (`busybox gunzip ... | tar ... && sysupgrade --kernel --rootfs`), which should work on very old (factory) firmware too.
 
-**SSC338Q (greg09rc2)**  
+`normal` builds support: `8812eu`, `8812au`, `8812cu`
+`_bu` builds support: `8812eu`, `8812au`, `8733bu` (replaces `8812cu`)
+
+**SSC338Q normal (`greg10`)**
 ```bash
-curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc338q-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz -f -n
+curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg10.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc338q-nor-apfpv-greg10.tgz && busybox gunzip -c /tmp/openipc.ssc338q-nor-apfpv-greg10.tgz | tar -xf - -C /tmp uImage.ssc338q rootfs.squashfs.ssc338q && sysupgrade --kernel=/tmp/uImage.ssc338q --rootfs=/tmp/rootfs.squashfs.ssc338q --force_all -n
 ```
 
-**SSC30KQ (greg09rc2)**  Known issue -  may lose connection and need to reboot for video mode change
-
+**SSC338Q `_bu` (`greg10_bu`)**
 ```bash
-curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz && sysupgrade --archive=/tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz -f -n
+curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg10_bu.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc338q-nor-apfpv-greg10_bu.tgz && busybox gunzip -c /tmp/openipc.ssc338q-nor-apfpv-greg10_bu.tgz | tar -xf - -C /tmp uImage.ssc338q rootfs.squashfs.ssc338q && sysupgrade --kernel=/tmp/uImage.ssc338q --rootfs=/tmp/rootfs.squashfs.ssc338q --force_all -n
 ```
 
-Or, manually copy the `.tgz` file to `/tmp` on the VTX and run the matching command:  
+**SSC30KQ normal (`greg10`)**
 ```bash
-sysupgrade --archive=/tmp/openipc.ssc338q-nor-apfpv-greg09rc2.tgz -f -n
-```
-```bash
-sysupgrade --archive=/tmp/openipc.ssc30kq-nor-apfpv-greg09rc2.tgz -f -n
+curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg10.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc30kq-nor-apfpv-greg10.tgz && busybox gunzip -c /tmp/openipc.ssc30kq-nor-apfpv-greg10.tgz | tar -xf - -C /tmp uImage.ssc30kq rootfs.squashfs.ssc30kq && sysupgrade --kernel=/tmp/uImage.ssc30kq --rootfs=/tmp/rootfs.squashfs.ssc30kq --force_all -n
 ```
 
-> **Note:** Very old firmware may not open `.tgz` archives.  
-If it fails, run this first:  
+**SSC30KQ `_bu` (`greg10_bu`)**
 ```bash
-sysupgrade -k -r -n
+curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg10_bu.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc30kq-nor-apfpv-greg10_bu.tgz && busybox gunzip -c /tmp/openipc.ssc30kq-nor-apfpv-greg10_bu.tgz | tar -xf - -C /tmp uImage.ssc30kq rootfs.squashfs.ssc30kq && sysupgrade --kernel=/tmp/uImage.ssc30kq --rootfs=/tmp/rootfs.squashfs.ssc30kq --force_all -n
 ```
 
 ---
 
-### 2. **Unplug the Ethernet cable and reboot (again)**  
-This is important — don’t skip it.
+### 2. Connecting to apfpv Access Point
+- Access point details:
+- SSID: `OpenIPC`
+- Password: `12345678`
 
+#### Rockchip VRX (Radxa)
+- Choose `apfpv` mode on your VRX (ground station) to connect.
+- Recommended: adapter `bl-m8812eu2`.
+- Connect Ethernet to home network. Open a web browser to `http://<your-VTX-LAN-ip>` and log in with `root` / `12345` for WebUI.
+
+#### Android
+- Disable auto-connect to other saved networks first.
+- Join `OpenIPC` with password `12345678`.
+- View stream in player such as `PixelPilot`.
+- Open a web browser to `http://192.168.0.1` and log in with `root` / `12345` for WebUI.
+
+#### Windows
+- On your chosen Wi-Fi adapter, disable auto-connect to other saved networks first.
+- Connect to Wi-Fi network `OpenIPC` using password `12345678`.
+- If it stops on channel initialization or channel change, disconnect and reconnect.
+- Open your player (for example `QGroundControl` set to UDP h265) for video. Browse to `http://192.168.0.1` and log in with `root` / `12345` for WebUI.
+
+#### Linux
+- On your chosen Wi-Fi adapter, disable auto-connect to other saved networks first.
+- Connect to Wi-Fi network `OpenIPC` using password `12345678`.
+- If it stops on channel initialization or channel change, disconnect and reconnect.
+- Open your player (for example `QGroundControl` set to UDP h265) for video. Browse to `http://192.168.0.1` and log in with `root` / `12345` for WebUI.
+
+#### Mac
+- On your chosen Wi-Fi adapter, disable auto-connect to other saved networks first.
+- Connect to Wi-Fi network `OpenIPC` using password `12345678`.
+- If it stops on channel initialization or channel change, disconnect and reconnect.
+- Open your player (for example `QGroundControl` set to UDP h265) for video. Browse to `http://192.168.0.1` and log in with `root` / `12345` for WebUI.
 ---
 
-### 3. Connect to the VTX  
-- The hotspot *should* come up:  
-  - **SSID:** `OpenIPC`  
-  - **Password:** `12345678`  
-
-- Connect using your phone **or** `nmtui` on the Radxa.  
-  - Recommended: use an **external adapter** (e.g. `bl-m8812eu2`)  
-  - Radxa internal Wi-Fi can work, just not well.
-
-- Once connected:  
-  - On **Android**, run **PixelPilot** → video should start.  
-  - On **Radxa**, run **pixelpilot_rk** → video should display.
-
-> 📡 You can reach the VTX:  
-- Over the air at **`192.168.0.1`**  
-- Or re-plug Ethernet after AP has initialized at **`<VTX-LAN-ip>`**
-
----
-
-### 4. Access the WebUI  
-- Open:  
-  - `http://192.168.0.1` (Wi-Fi)  
-  - `http://<VTX-LAN-ip>` (Ethernet)  
+### WebUI Access Summary
+- WLAN: `http://192.168.0.1` (login `root` / `12345`)
+- Ethernet: `http://<VTX-LAN-ip>` (login `root` / `12345`)
 
 <p align="center">
   <a href="https://github.com/user-attachments/assets/dfbd0432-2a15-4393-91a7-de0430bd95b9">
@@ -67,15 +75,12 @@ This is important — don’t skip it.
 
 ---
 
-### Notes  
-- The WebUI now includes **20/40/80 MHz** options and a dedicated channel selection menu.  
-- **20 MHz channels** use a single number (e.g. `36`)  
-- **40 MHz channels** use two numbers (e.g. `36_40`)  
-- **80 MHz channels** use lowest and highest of the 4 spanning channels (e.g. `36_48`)  
-
-- Press **Apply** to negotiate a new channel (**EU wlan**)  
-- Use **Forcing** for **AU wlan**  
-
-- Video mode reports correctly after setting your first mode  
-- Sometimes the WebUI may break the connection — if so, just **restart the VTX**  
-- **SSC30KQ known issue:** setting video modes may freeze or drop the connection; if that happens, restart the VTX.  
+### Notes
+- WebUI includes 20/40/80 MHz options and dedicated channel selection.
+- 20 MHz channels use one number (example: `36`).
+- 40 MHz channels use two numbers (example: `36_40`).
+- 80 MHz channels use the lowest and highest spanning channels (example: `36_48`).
+- Press `Apply` to negotiate a new channel (normal WLAN).
+- Use `Forcing` only for AU WLAN.
+- Video mode reports correctly after first mode set.
+- WebUI or changing of video modes may occasionally break connection; restart VTX if that happens.
