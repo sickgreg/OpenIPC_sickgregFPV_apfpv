@@ -11,9 +11,9 @@ Pick the command that matches your SoC and WLAN driver set. Each command is a si
 curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg10.2.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc338q-nor-apfpv-greg10.2.tgz && busybox gunzip -c /tmp/openipc.ssc338q-nor-apfpv-greg10.2.tgz | tar -xf - -C /tmp uImage.ssc338q rootfs.squashfs.ssc338q && sysupgrade --kernel=/tmp/uImage.ssc338q --rootfs=/tmp/rootfs.squashfs.ssc338q --force_all -n
 ```
 
-**SSC338Q `_bu` (`greg10.1_bu`)**
+**SSC338Q `_bu` (`greg10.2_bu`)**
 ```bash
-curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg10.1_bu.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc338q-nor-apfpv-greg10.1_bu.tgz && busybox gunzip -c /tmp/openipc.ssc338q-nor-apfpv-greg10.1_bu.tgz | tar -xf - -C /tmp uImage.ssc338q rootfs.squashfs.ssc338q && sysupgrade --kernel=/tmp/uImage.ssc338q --rootfs=/tmp/rootfs.squashfs.ssc338q --force_all -n
+curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg10.2_bu.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc338q-nor-apfpv-greg10.2_bu.tgz && busybox gunzip -c /tmp/openipc.ssc338q-nor-apfpv-greg10.2_bu.tgz | tar -xf - -C /tmp uImage.ssc338q rootfs.squashfs.ssc338q && sysupgrade --kernel=/tmp/uImage.ssc338q --rootfs=/tmp/rootfs.squashfs.ssc338q --force_all -n
 ```
 
 **SSC30KQ normal (`greg10.2`)**
@@ -21,9 +21,9 @@ curl -L -o /tmp/openipc.ssc338q-nor-apfpv-greg10.1_bu.tgz https://raw.githubuser
 curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg10.2.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc30kq-nor-apfpv-greg10.2.tgz && busybox gunzip -c /tmp/openipc.ssc30kq-nor-apfpv-greg10.2.tgz | tar -xf - -C /tmp uImage.ssc30kq rootfs.squashfs.ssc30kq && sysupgrade --kernel=/tmp/uImage.ssc30kq --rootfs=/tmp/rootfs.squashfs.ssc30kq --force_all -n
 ```
 
-**SSC30KQ `_bu` (`greg10.1_bu`)**
+**SSC30KQ `_bu` (`greg10.2_bu`)**
 ```bash
-curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg10.1_bu.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc30kq-nor-apfpv-greg10.1_bu.tgz && busybox gunzip -c /tmp/openipc.ssc30kq-nor-apfpv-greg10.1_bu.tgz | tar -xf - -C /tmp uImage.ssc30kq rootfs.squashfs.ssc30kq && sysupgrade --kernel=/tmp/uImage.ssc30kq --rootfs=/tmp/rootfs.squashfs.ssc30kq --force_all -n
+curl -L -o /tmp/openipc.ssc30kq-nor-apfpv-greg10.2_bu.tgz https://raw.githubusercontent.com/sickgreg/OpenIPC_sickgregFPV_apfpv/main/openipc.ssc30kq-nor-apfpv-greg10.2_bu.tgz && busybox gunzip -c /tmp/openipc.ssc30kq-nor-apfpv-greg10.2_bu.tgz | tar -xf - -C /tmp uImage.ssc30kq rootfs.squashfs.ssc30kq && sysupgrade --kernel=/tmp/uImage.ssc30kq --rootfs=/tmp/rootfs.squashfs.ssc30kq --force_all -n
 ```
 
 ---
